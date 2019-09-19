@@ -6,6 +6,11 @@ body{
 h2, h3, h4{
     color: white;
 }
+
+.modal-content{
+    background-color: black;
+}
+
 .survey-body{
     background-color: #07A0E8;
     border: 5px solid #F8A405;
