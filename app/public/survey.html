@@ -16,12 +16,12 @@
   <!-- Chosen -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
-
+  <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="container survey-body">
 
     <h2>Survey Questions</h2>
     <hr>
@@ -36,7 +36,7 @@
     <hr>
 
     <h3><strong>Question 1</strong></h3>
-    <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+    <h4 class="q">You enjoy spending your free time cleaning your house/apartment.</h4>
     <select class="chosen-select" id="q1">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -47,7 +47,7 @@
     </select>
 
     <h3><strong>Question 2</strong></h3>
-    <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+    <h4 class="q">If you could choose any place to eat, you would pick a pizzeria or a deli.</h4>
     <select class="chosen-select" id="q2">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -59,7 +59,7 @@
 
 
     <h3><strong>Question 3</strong></h3>
-    <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+    <h4 class="q">You are laid back and prefer to go with the flow.</h4>
     <select class="chosen-select" id="q3">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -71,7 +71,7 @@
 
 
     <h3><strong>Question 4</strong></h3>
-    <h4>You rarely do something just out of sheer curiosity.</h4>
+    <h4 class="q">You enjoy engaging in sophisticated conversation.</h4>
     <select class="chosen-select" id="q4">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -83,7 +83,7 @@
 
 
     <h3><strong>Question 5</strong></h3>
-    <h4>People can rarely upset you.</h4>
+    <h4 class="q">You prefer to be challenged.</h4>
     <select class="chosen-select" id="q5">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -95,7 +95,7 @@
 
 
     <h3><strong>Question 6</strong></h3>
-    <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+    <h4 class="q">You are competetive.</h4>
     <select class="chosen-select" id="q6">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -107,7 +107,7 @@
 
 
     <h3><strong>Question 7</strong></h3>
-    <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+    <h4 class="q">You consider yourself to be an artist.</h4>
     <select class="chosen-select" id="q7">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -118,7 +118,7 @@
     </select>
 
     <h3><strong>Question 8</strong></h3>
-    <h4>You rarely get carried away by fantasies and ideas.</h4>
+    <h4 class="q">You rarely get carried away by fantasies and ideas.</h4>
     <select class="chosen-select" id="q8">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -129,7 +129,7 @@
     </select>
 
     <h3><strong>Question 9</strong></h3>
-    <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+    <h4 class="q">You are open to new ideas.</h4>
     <select class="chosen-select" id="q9">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -140,7 +140,7 @@
     </select>
 
     <h3><strong>Question 10</strong></h3>
-    <h4>You feel more energetic after spending time with a group of people.</h4>
+    <h4 class="q">You go out of your way to help your friends.</h4>
     <select class="chosen-select" id="q10">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -171,20 +171,19 @@
     <div class="modal-dialog">
 
       <!-- Modal content-->
-      <div class="modal-content">
+      <div class="modal-content" style="display: inline-block">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h2 class="modal-title"><strong>Best Match</strong></h2>
         </div>
         <div class="modal-body">
           <h2 id="match-name"></h2>
-          <img id="match-img" src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.britannica.com%2F66%2F195966-138-F9E7A828%2Ffacts-turtles.jpg&imgrefurl=https%3A%2F%2Fwww.britannica.com%2Fanimal%2Fturtle-reptile&docid=fZ8hamp8jom5AM&tbnid=cwvutuEys4nOBM%3A&vet=10ahUKEwjV446IvdjkAhVRa8AKHWfeCO4QMwh8KAEwAQ..i&w=1920&h=1080&bih=1007&biw=1920&q=turtle&ved=0ahUKEwjV446IvdjkAhVRa8AKHWfeCO4QMwh8KAEwAQ&iact=mrc&uact=8" alt="">
+          <img id="match-img" src="" alt="">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -206,13 +205,20 @@
         scores: scores
       }
 
+      $("#name").val("")
+      $("#photo").val("")
+
+      for (let i=1; i<11; i++){
+        $("#q" + i).val("")
+      }
+
       $.post("/api/friends", newFriend, () => console.log(newFriend.name + " added!"))
       
       $.ajax({
         url: "/api/friends",
         method: "GET"
       }).then((friendsData) => {
-        console.log(friendsData)
+
         let scoresDiff = []
         let scoreHolder = 0
 
@@ -228,7 +234,9 @@
 
         let min = Math.min(...scoresDiff)
         let bestFriend = scoresDiff.indexOf(min)
-        console.log("Your new best friend is " + friendsData[bestFriend].name)
+        $("#match-img").attr("src", friendsData[bestFriend].photo)
+        $("#match-name").text(friendsData[bestFriend].name)
+        $("#results-modal").modal("toggle")
         
       })
     })
