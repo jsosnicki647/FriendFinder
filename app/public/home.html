@@ -16,10 +16,31 @@
     body{
       background-image:URL('https://vignette.wikia.nocookie.net/friends/images/9/94/Central_Perk.jpg/revision/latest?cb=20130105161326');
       background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 100vh;
     }
 
-    .jumbotron{
-        opacity:.9;
+    .jumbotron, .links{
+        background-color: #07A0E8;
+        color: white;
+    }
+
+    #submit{
+        background-color: #F8A405;
+    }
+
+    a:hover{
+      text-decoration: none;
+      
+    }
+
+    #submit:hover{
+      color: #F8A405;
+      background-color: white;
+    }
+
+    p{
+      padding-top: 5px;
     }
 
   </style>
@@ -29,24 +50,21 @@
 
   <div class="container">
 
-    <div class="jumbotron">
-      <h1 class="friends"><img src="https://drive.google.com/uc?id=1DHwAGg6BGR0TcQBZmqNjm6z4oPwWhodw"> Friend Finder</h1>
+    <div class="jumbotron" style="padding: 48px 30px 5px 30px; margin-top: 20px;">
+      <h1 class="friends text-center"><img src="https://drive.google.com/uc?id=1DHwAGg6BGR0TcQBZmqNjm6z4oPwWhodw"> Friend Finder</h1>
       <hr>
-      <h2>Answer a few basic questions. </h2>
-      <h2>Then find the friend with the greatest compatibility!</h2>
+      <h2 class="text-center">Answer a few questions and find your new best friend! </h2>
       <br>
 
       <div>
-        <a href="/survey"><button type="button" class="btn btn-lg btn-primary"><h4><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4></button></a>
+        <a href="/survey"><button id="submit" type="button" class="btn btn-lg btn-primary btn-block"><h4><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4></button></a>
       </div>
 
+      <div class="container">
+        <p class="text-right"><a class="links" href="/api/friends">API Friends List</a> | <a class="links" href="https://github.com/jsosnicki647/Friendfinder">GitHub Repo</a></p>
+      </div>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
-      </div>
-    </footer>
 
   </div>
 

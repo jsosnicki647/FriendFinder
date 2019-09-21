@@ -33,14 +33,25 @@
     .survey-body{
         background-color: #07A0E8;
         border: 5px solid #F8A405;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .q{
         color: black
     }
 
+    .links{
+      color:white;
+    }
+
     #submit{
         background-color: #F8A405;
+    }
+
+    #submit:hover{
+      color: #F8A405;
+      background-color: white;
     }
       
   </style>
@@ -72,7 +83,7 @@
 
   <div class="container survey-body">
 
-    <h2>Survey Questions</h2>
+    <h2 class="text-center">Survey Questions</h2>
     <hr>
 
     <h3><strong>Question 1</strong></h3>
@@ -85,6 +96,7 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
+    <hr>
 
     <h3><strong>Question 2</strong></h3>
     <h4 class="q">If you could choose any place to eat, you would pick a pizzeria or a deli.</h4>
@@ -96,7 +108,7 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
-
+    <hr>
 
     <h3><strong>Question 3</strong></h3>
     <h4 class="q">You are laid back and prefer to go with the flow.</h4>
@@ -108,7 +120,7 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
-
+    <hr>
 
     <h3><strong>Question 4</strong></h3>
     <h4 class="q">You enjoy engaging in sophisticated conversation.</h4>
@@ -120,7 +132,7 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
-
+    <hr>
 
     <h3><strong>Question 5</strong></h3>
     <h4 class="q">You prefer to be challenged.</h4>
@@ -132,7 +144,7 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
-
+    <hr>
 
     <h3><strong>Question 6</strong></h3>
     <h4 class="q">You are competetive.</h4>
@@ -144,7 +156,7 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
-
+    <hr>
 
     <h3><strong>Question 7</strong></h3>
     <h4 class="q">You consider yourself to be an artist.</h4>
@@ -156,6 +168,7 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
+    <hr>
 
     <h3><strong>Question 8</strong></h3>
     <h4 class="q">You rarely get carried away by fantasies and ideas.</h4>
@@ -167,6 +180,7 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
+    <hr>
 
     <h3><strong>Question 9</strong></h3>
     <h4 class="q">You are open to new ideas.</h4>
@@ -178,6 +192,7 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
+    <hr>
 
     <h3><strong>Question 10</strong></h3>
     <h4 class="q">You go out of your way to help your friends.</h4>
@@ -189,18 +204,16 @@
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
-
-    <br>
+    <hr>
     <br>
 
     <!-- Submit Button -->
     <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
      Submit</button>
 
-    <hr>
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+        <p><a class="links" href="/api/friends">API Friends List</a><span class="links"> | </span><a class="links" href="https://github.com/jsosnicki647/Friendfinder">GitHub Repo</a></p>
       </div>
     </footer>
 
@@ -230,6 +243,7 @@
   <script type="text/javascript">
     window.onload = function(){
       $("#about-modal").modal("toggle")
+      $("#name").focus()
     }
 
     $("#about-submit").on("click", () => {
