@@ -235,6 +235,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="find-new-friend" class="btn btn-default">Find new friend?</button>
         </div>
       </div>
     </div>
@@ -313,6 +314,8 @@
         $("#match-img").attr("src", friendsData[bestFriend].photo)
         $("#match-name").text(friendsData[bestFriend].name)
         $("#results-modal").modal("toggle")
+        $("#find-new-friend").on("click", () => location.reload(true))
+          
         
       })
     })
