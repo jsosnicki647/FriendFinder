@@ -1,32 +1,32 @@
 var friendsArray = [
   {
     name: "Joey",
-    photo: "https://imgix.bustle.com/uploads/image/2018/8/30/540599ec-b13a-428c-8075-6f15bda099d6-joey-tribbianni-best-pickup-lines.png?w=1020&h=574&fit=crop&crop=faces&auto=format&q=70",
+    photo: "https://drive.google.com/uc?id=1eeFr8LpH61dCQXxwTms7V1cJun3ZgMlq",
     scores: ["1","5","5","1","1","2","5","1","3","5"]
   },
   {
     name: "Chandler",
-    photo: "https://www.cheatsheet.com/wp-content/uploads/2018/09/Chandler-on-Friends.png",
+    photo: "https://drive.google.com/uc?id=1p-P5QrSSpF71DDJUIqsQBm4VaMO0wx_8",
     scores: ["1","3","2","3","4","2","1","4","2","4"]
   },
   {
     name: "Ross",
-    photo: "https://cdn.evoke.ie/wp-content/uploads/2018/04/04155521/Ross-Friends-696x503.jpg",
+    photo: "https://drive.google.com/uc?id=1dxs2ZakRdfYb9KAUdVm5T-lA4lpVXQlp",
     scores: ["3","2","1","5","5","4","1","5","1","3"]
   },
   {
     name: "Monica",
-    photo: "https://amp.insider.com/images/5c8279ebeb3ce821ef1247a2-750-562.jpg",
+    photo: "https://drive.google.com/uc?id=1jeQivPosH3Xhkz27b3NE_3tMWFNkxLh5",
     scores: ["5","1","1","4","5","5","3","4","2","3"]
   },
   {
     name: "Rachel",
-    photo: "https://i.pinimg.com/originals/a3/0d/8f/a30d8ff70d0584e6612c6ceba5da4290.jpg",
+    photo: "https://drive.google.com/uc?id=1WpQnIX3rjNAXL9d15E84iY7fK7DPkFRC",
     scores: ["2","2","4","2","1","2","3","2","4","4"]
   },
   {
     name: "Phoebe",
-    photo: "https://i.ytimg.com/vi/V-ShguTU0sw/maxresdefault.jpg",
+    photo: "https://drive.google.com/uc?id=1p19wl0qdVmNATBUwqbuDzi67gDJG3E5f",
     scores: ["2","3","5","1","1","1","5","1","5","4"]
   }
 ]
